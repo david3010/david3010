@@ -1,5 +1,5 @@
-# Hola, soy [Tu Nombre] 👋
-### Desarrollador [Frontend / Backend / Full Stack]
+# Hola, soy David 👋
+### Desarrollador Full Stack
 
 ¡Bienvenido a mi perfil! Soy un apasionado por la tecnología y la creación de soluciones web. Aquí encontrarás un poco sobre lo que hago y lo que estoy aprendiendo.
 
@@ -38,8 +38,8 @@
 *(Cambia "TU-USUARIO" en los links de abajo por tu nombre real de usuario de GitHub)*
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=TU-USUARIO&show_icons=true&theme=radical&hide_border=true" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU-USUARIO&layout=compact&theme=radical&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=david3010&show_icons=true&theme=radical&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=david3010&layout=compact&theme=radical&hide_border=true" />
 </div>
 
 ---
