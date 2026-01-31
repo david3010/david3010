@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Gallegos - Ingeniero de Software</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FFA500;
+            --dark-bg: #1a1a1a;
+            --light-text: #ffffff;
+            --secondary-bg: #2a2a2a;
+            --text-muted: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--dark-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            padding: 0.45rem 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+
+        .hamburger .line {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--light-text);
+            margin: 4px 0;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            min-height: 600px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .hero-buttons button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #000;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--text-muted);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Responsive avatar used in hero */
+        .avatar {
+            width: min(300px, 45vw);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #ff8c00 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .avatar i {
+            font-size: clamp(64px, 12vw, 150px);
+            color: rgba(255, 255, 255, 0.32);
+        }
+
+        /* EXPERT SECTION */
+        .expert-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+            background-color: var(--secondary-bg);
+        }
+
+        .expert-card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 165, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .expert-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+        }
+
+        .expert-card h3 {
+            margin: 1rem 0;
+            color: var(--primary-color);
+        }
+
+        .expert-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .expert-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 4rem 5%;
+            background-color: var(--secondary-bg);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 165, 0, 0.2);
+        }
+
+        .service-card h3 {
+            margin: 1rem 0;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* SKILLS SECTION */
+        .skills {
+            padding: 4rem 5%;
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .skill-item {
+            background-color: var(--secondary-bg);
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            display: inline-block;
+            border: 1px solid rgba(255, 165, 0, 0.2);
+        }
+
+        .skill-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* PROJECTS SECTION */
+        .projects {
+            padding: 4rem 5%;
+            background-color: var(--secondary-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* make nav wrap to avoid horizontal overflow on small screens */
+        nav ul {
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 165, 0, 0.1);
+        }
+
+        .project-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--secondary-bg);
+            color: var(--primary-color);
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--secondary-bg);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+            border-radius: 5px;
+            color: var(--light-text);
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 4rem 5%;
+            background-color: var(--secondary-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0a0a0a;
+            padding: 2rem 5%;
+            text-align: center;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 165, 0, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 4%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: center;
+                display: none;
+                position: absolute;
+                top: 64px;
+                right: 0;
+                left: 0;
+                background: var(--dark-bg);
+                padding: 1rem 2rem 2rem 2rem;
+                border-top: 1px solid rgba(255, 165, 0, 0.03);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            }
+
+            nav.open ul {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 3%;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .expert-section,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about,
+            .skills-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">DAVID</div>
+        <button class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()"><span class="line"></span><span
+                class="line"></span><span class="line"></span></button>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><button class="cta-btn" onclick="document.getElementById('contacto').scrollIntoView()">Contacto</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>I'M <span class="highlight">DAVID</span></h1>
+            <p>Ingeniero de Software especializado en desarrollo web con más de 5 años de experiencia. Experto en React,
+                AWS y .NET Core, creando soluciones digitales innovadoras y escalables.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary"
+                    onclick="document.getElementById('contacto').scrollIntoView()">Contactar</button>
+                <button class="btn-secondary">Descargar CV</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="avatar">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT SECTION -->
+    <section class="expert-section">
+        <div class="expert-card">
+            <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+            <h3>Experto en Desarrollo</h3>
+            <p>Más de 5 años de experiencia en desarrollo web con tecnologías modernas y escalables.</p>
+            <a href="#servicios">Saber más →</a>
+        </div>
+        <div class="expert-card">
+            <i class="fas fa-sync-alt" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+            <h3>Revisiones Ilimitadas</h3>
+            <p>Revisions sin límite hasta que el proyecto sea exactamente lo que necesitas.</p>
+            <a href="#contacto">Saber más →</a>
+        </div>
+        <div class="expert-card">
+            <i class="fas fa-comments" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+            <h3>Comunicación Clara</h3>
+            <p>Comunicación constante y transparente durante todo el proceso del proyecto.</p>
+            <a href="#contacto">Saber más →</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="sobre-mi">
+        <div>
+            <h2>SOBRE MÍ</h2>
+            <p>Soy un Ingeniero de Software apasionado con un track record probado en la creación de soluciones
+                digitales de alto impacto. Con más de 5 años de experiencia, he trabajado en diversos proyectos que van
+                desde aplicaciones web interactivas hasta sistemas backend escalables.</p>
+            <p>Mi experiencia en <strong>React</strong>, <strong>AWS</strong> y <strong>.NET Core</strong> me permite
+                crear aplicaciones modernas y eficientes. Actualmente trabajo en <strong>Principal Financial
+                    Group</strong>, donde contribuyo al desarrollo de soluciones innovadoras.</p>
+            <p>Mi pasión es resolver problemas complejos a través de código limpio, arquitectura sólida y best practices
+                en desarrollo. Siempre estoy aprendiendo nuevas tecnologías y compartiendo conocimiento con mi equipo.
+            </p>
+        </div>
+        <div
+            style="background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%); padding: 2rem; border-radius: 10px; border: 1px solid rgba(255, 165, 0, 0.2);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Datos Rápidos</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;"><strong
+                    style="color: var(--light-text);">Ubicación:</strong> Colombia</p>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;"><strong
+                    style="color: var(--light-text);">Empresa:</strong> Principal Financial Group</p>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;"><strong
+                    style="color: var(--light-text);">Especialidad:</strong> Full Stack Development</p>
+            <p style="color: var(--text-muted);"><strong style="color: var(--light-text);">Email:</strong>
+                david@example.com</p>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="servicios">
+        <h2 class="section-title">MIS SERVICIOS</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h3>Desarrollo Web</h3>
+                <p>Crea aplicaciones web modernas y responsivas usando React, HTML5, CSS3 y JavaScript. Optimizadas para
+                    rendimiento y SEO.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Soluciones AWS</h3>
+                <p>Diseño e implementación de infraestructura en AWS. EC2, S3, Lambda, RDS y más para aplicaciones
+                    escalables y seguras.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Backend .NET Core</h3>
+                <p>Desarrollo de APIs REST robustas con .NET Core. Implementación de patrones SOLID, Entity Framework y
+                    best practices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-database"></i></div>
+                <h3>Diseño de Bases de Datos</h3>
+                <p>Diseño y optimización de bases de datos SQL y NoSQL. Consultas eficientes y arquitectura escalable.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-users"></i></div>
+                <h3>Consultoría Técnica</h3>
+                <p>Asesoría en arquitectura de software, mejora de código y decisiones tecnológicas para tu proyecto.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Despliegue & DevOps</h3>
+                <p>Automatización de deployments, CI/CD pipelines, Docker, y monitoreo de aplicaciones en producción.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="habilidades">
+        <h2 class="section-title">MIS HABILIDADES</h2>
+        <div class="skills-content">
+            <div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">JavaScript/TypeScript</span>
+                        <span class="skill-item">HTML5 & CSS3</span>
+                        <span class="skill-item">Redux</span>
+                        <span class="skill-item">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div>
+                        <span class="skill-item">.NET Core</span>
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">APIs REST</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Entity Framework</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Linux</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Digital Marketing</h3>
+                <p class="skill-description">Como ingeniero de software con experiencia en marketing digital, tengo un
+                    conocimiento integral de cómo crear soluciones web que no solo sean tecnológicamente sólidas, sino
+                    que también cumplan objetivos comerciales.</p>
+                <p class="skill-description" style="margin-top: 1.5rem;"><strong>Desarrollo Web</strong><br>En el ámbito
+                    del desarrollo web, tengo experiencia en crear aplicaciones dinámicas, responsive y optimizadas para
+                    conversión.</p>
+                <p class="skill-description" style="margin-top: 1.5rem;"><strong>Project Management</strong><br>Gestión
+                    eficiente de proyectos siguiendo metodologías agile, asegurando entrega a tiempo y cumplimiento de
+                    objetivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects" id="proyectos">
+        <h2 class="section-title">MIS PROYECTOS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Dashboard Analytics</h3>
+                    <p>Aplicación web interactiva para análisis de datos en tiempo real. Gráficos dinámicos y reportes
+                        personalizables.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">D3.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="project-content">
+                    <h3>E-commerce Platform</h3>
+                    <p>Plataforma de comercio electrónico completa con carrito de compras, pagos y gestión de
+                        inventario.</p>
+                    <div class="project-tags">
+                        <span class="tag">.NET Core</span>
+                        <span class="tag">React</span>
+                        <span class="tag">SQL Server</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Cloud Storage System</h3>
+                    <p>Sistema de almacenamiento en la nube con sincronización automática y control de permisos.</p>
+                    <div class="project-tags">
+                        <span class="tag">AWS S3</span>
+                        <span class="tag">Lambda</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Social Network App</h3>
+                    <p>Red social con funcionalidades de chat en tiempo real, posts y notificaciones.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">WebSocket</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <h2 class="section-title">LO QUE DICEN MIS CLIENTES</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"David es un profesional excepcional. Su trabajo en nuestro proyecto fue impecable y entregó
+                    exactamente lo que necesitábamos."</p>
+                <div class="testimonial-author">Sarah García - CEO Tech Startup</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"La calidad de código y el conocimiento técnico de David son extraordinarios. Altamente recomendado
+                    para cualquier proyecto."</p>
+                <div class="testimonial-author">Miguel López - Product Manager</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Trabajar con David fue una experiencia fantástica. Comunicativo, profesional y siempre dispuesto a
+                    ayudar."</p>
+                <div class="testimonial-author">Emma Rodríguez - Directora de Desarrollo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contacto">
+        <h2>CONTACTAME</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">¿Tienes un proyecto en mente? Me encantaría escuchar
+            sobre él.</p>
+        <div class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Tu Nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Tu Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Asunto">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Tu Mensaje" required></textarea>
+            </div>
+            <button class="cta-btn" style="width: 100%; padding: 1rem;">Enviar Mensaje</button>
+        </div>
+        <div class="social-links" style="margin-top: 2rem;">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="margin-bottom: 1rem;"><strong>DAVID GALLEGOS</strong></p>
+        <p style="margin-bottom: 1.5rem;">Ingeniero de Software | Desarrollo Web | Full Stack Developer</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">© 2026 David Gallegos. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('open');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                // close mobile menu when link clicked
+                document.querySelector('nav').classList.remove('open');
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
