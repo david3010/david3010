@@ -34,18 +34,8 @@
 
 ---
 
-### 📊 Mis Estadísticas de GitHub
-*(Cambia "TU-USUARIO" en los links de abajo por tu nombre real de usuario de GitHub)*
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=david3010&show_icons=true&theme=radical&hide_border=true" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=david3010&layout=compact&theme=radical&hide_border=true" />
-</div>
-
----
-
 ### 📫 Contáctame
 
-- 💼 LinkedIn: [Tu enlace a LinkedIn](https://linkedin.com/in/tu-usuario)
-- 🌐 Portafolio Web: [Tu enlace a tu web](https://tu-web.com)
-- 📧 Email: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+- 💼 LinkedIn: [Tu enlace a LinkedIn](https://linkedin.com/in/david-gallegos3010)
+- 🌐 Portafolio Web: [Tu enlace a tu web](https://david3010.github.io/david3010)
+- 📧 Email: [tu-email@ejemplo.com](mailto:daviddg301094@gmail.com)
