@@ -36,6 +36,6 @@
 
 ### 📫 Contáctame
 
-- 💼 LinkedIn: (https://linkedin.com/in/david-gallegos3010)
-- 🌐 Portafolio Web: (https://david3010.github.io/david3010)
-- 📧 Email: (mailto:daviddg301094@gmail.com)
+- 💼 LinkedIn: [david-gallegos3010](https://linkedin.com/in/david-gallegos3010)
+- 🌐 Portafolio Web: [david3010](https://david3010.github.io/david3010)
+- 📧 Email: [daviddg301094@gmail.com](mailto:daviddg301094@gmail.com)
