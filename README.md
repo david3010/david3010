@@ -1,1 +1,51 @@
-## Hi there 👋
+# Hola, soy [Tu Nombre] 👋
+### Desarrollador [Frontend / Backend / Full Stack]
+
+¡Bienvenido a mi perfil! Soy un apasionado por la tecnología y la creación de soluciones web. Aquí encontrarás un poco sobre lo que hago y lo que estoy aprendiendo.
+
+---
+
+### 🚀 Sobre mí
+- 🔭 Actualmente estoy trabajando en **[Nombre de tu proyecto o "Proyectos personales"]**
+- 🌱 Estoy aprendiendo **[Tecnología nueva, ej. Next.js, Docker, IA]**
+- 👯 Busco colaborar en **proyectos Open Source**
+- 💬 Pregúntame sobre **[Tus temas fuertes, ej. React, CSS, Python]**
+- ⚡ Dato curioso: **[Algo divertido, ej. "Puedo centrar un div sin llorar"]**
+
+---
+
+### 🛠️ Tech Stack
+*(Aquí puedes mostrar tus herramientas. He puesto algunas comunes, borra las que no uses)*
+
+**Lenguajes y Frameworks:**
+<p align="left">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+</p>
+
+**Herramientas:**
+<p align="left">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+</p>
+
+---
+
+### 📊 Mis Estadísticas de GitHub
+*(Cambia "TU-USUARIO" en los links de abajo por tu nombre real de usuario de GitHub)*
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=TU-USUARIO&show_icons=true&theme=radical&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU-USUARIO&layout=compact&theme=radical&hide_border=true" />
+</div>
+
+---
+
+### 📫 Contáctame
+
+- 💼 LinkedIn: [Tu enlace a LinkedIn](https://linkedin.com/in/tu-usuario)
+- 🌐 Portafolio Web: [Tu enlace a tu web](https://tu-web.com)
+- 📧 Email: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
